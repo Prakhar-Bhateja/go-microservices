@@ -2,21 +2,29 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-deployment
+  namespace: tantest
   labels:
-    app: web
+    app: go-web-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: web
+      app: go-web-app
   template:
     metadata:
       labels:
-        app: web
+        app: go-web-app
     spec:
       containers:
-      - name: go-web-app
-        image: go-app-ms:latest
+      - name: go-web-micro-app
+        image: occne-repo-host:5000/go-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
