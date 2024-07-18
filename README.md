@@ -12,7 +12,6 @@ I deployed mine in an **OCI cluster** while working at **ORACLE**.
 - [Building the Docker Image](#building-the-docker-image)
 - [Deploying to Kubernetes](#deploying-to-kubernetes)
 - [Running the Service](#running-the-service)
-- [License](#license)
 
 ## Overview
 
