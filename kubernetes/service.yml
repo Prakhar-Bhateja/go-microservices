@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: tantest
+spec:
+  type: ClusterIP
+  selector:
+    app: go-web-app
+    app.kubernetes.io/name: go-web-app
+  ports:
+    - port: 80
+      targetPort: 80
